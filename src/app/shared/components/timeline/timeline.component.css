@@ -1,0 +1,12 @@
+.timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 4rem;
+}
+
+.timeline>.time {
+    padding: .5rem;
+    border-left: 1px solid black;
+}

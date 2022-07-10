@@ -1,7 +1,8 @@
 <div class="timeline">
-    <div class="timeline-event">
-      
-  
-    </div>
-  
+  <div class="time" *ngFor="let time of timelineRender">
+    {{time[0]}}
+    <ng-container *ngIf="time[1]">
+      Tiene libro!
+    </ng-container>
   </div>
+</div>

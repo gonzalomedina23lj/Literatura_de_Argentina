@@ -1,5 +1,3 @@
-import { AppRoutingModule } from "../app-routing.module";
-
 export interface Book {
     id: string;
     authorId: string;

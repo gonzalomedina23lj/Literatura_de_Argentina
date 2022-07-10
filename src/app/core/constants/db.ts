@@ -1,3 +1,4 @@
+import { Book } from "../models/book";
 import { DB } from "../models/database";
 
 
@@ -172,10 +173,24 @@ export const database: DB = {
     ]
 }
 
-const getBooksByAuthorId = (authorId: string) => {
-    database.books.filter(book => book.authorId === authorId);
+export const getBooksByAuthorId = (authorId: string): Book[] => {
+    return database.books.filter(book => book.authorId === authorId);
 };
 
-const getAuthorsById = (id: string) => {
-    database.authors.filter(author => author.id === id);
+export const getAuthorsById = (id: string) => {
+    return database.authors.filter(author => author.id === id);
 };
+
+export const sortByPublishDate = (collection: Book[]) => {
+    return collection.sort((a, b) => {
+        const dateA = new Date(a.publishDate);
+        const dateB = new Date(b.publishDate);
+        if (dateA > dateB) {
+            return 1;
+        }
+        if (dateA < dateB) {
+            return -1;
+        }
+        return 0;
+    });
+}
